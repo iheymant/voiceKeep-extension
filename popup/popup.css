@@ -1,0 +1,608 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap');
+
+:root {
+
+  --bg:
+    linear-gradient(180deg,
+      #f7f7f8 0%,
+      #efeff1 100%);
+
+  --surface:
+    rgba(255, 255, 255, .78);
+
+  --surface-hover:
+    rgba(255, 255, 255, .9);
+
+  --surface-strong:
+    rgba(255, 255, 255, .96);
+
+  --text: #0f0f10;
+
+  --text-soft: #5f6068;
+
+  --border:
+    rgba(0, 0, 0, .08);
+
+  --primary:
+    #111111;
+
+  --primary-hover:
+    #2a2a2a;
+
+  --accent:
+    #ffffff;
+
+  --glow:
+    rgba(255, 255, 255, .45);
+
+  --shadow:
+    0 8px 30px rgba(0, 0, 0, .06);
+
+  --radius-sm: 16px;
+  --radius-md: 26px;
+
+  --ease:
+    cubic-bezier(.22, 1, .36, 1);
+
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html,
+body {
+  margin: 0;
+  width: 320px;
+  min-height: 420px;
+
+  background: var(--bg);
+  color: var(--text);
+
+  font-family:
+    'Inter',
+    -apple-system,
+    BlinkMacSystemFont,
+    sans-serif;
+
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
+  user-select: none;
+}
+
+body {
+
+  padding: 16px;
+
+  background:
+    linear-gradient(180deg,
+      #f7f7f8 0%,
+      #eeeeef 100%);
+
+  backdrop-filter: blur(24px);
+
+}
+
+body::before {
+
+  content: "";
+
+  position: fixed;
+
+  inset: 0;
+
+  background:
+
+    radial-gradient(circle at top left,
+      rgba(255, 255, 255, .32),
+      transparent 28%),
+
+    radial-gradient(circle at bottom right,
+      rgba(0, 0, 0, .018),
+      transparent 40%);
+
+  opacity: .55;
+
+  pointer-events: none;
+
+}
+
+header {
+  margin-bottom: 18px;
+}
+
+h1 {
+  margin: 0;
+
+  font-size: 15px;
+  font-weight: 600;
+  letter-spacing: -.02em;
+
+  color: var(--text);
+}
+
+h3 {
+  margin: 0;
+
+  font-size: 13px;
+  font-weight: 500;
+
+  color: var(--text);
+}
+
+p {
+  margin: 0;
+
+  font-size: 13px;
+  line-height: 1.55;
+
+  color: var(--text);
+}
+
+main {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+section {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.description {
+  margin: 0;
+
+  font-size: 13px;
+  line-height: 1.55;
+
+  color: var(--text-soft);
+}
+
+.empty-state {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 8px;
+
+  padding: 20px;
+
+  border-radius: 18px;
+
+  background:
+    rgba(255, 255, 255, .52);
+
+  border:
+    1px solid rgba(255, 255, 255, .65);
+
+  backdrop-filter:
+    blur(26px);
+
+  box-shadow:
+    0 10px 30px rgba(0, 0, 0, .06);
+
+}
+
+button {
+
+  appearance: none;
+
+  width: 100%;
+  height: 42px;
+
+  border-radius:
+    var(--radius-sm);
+
+  border:
+    1px solid transparent;
+
+  font: inherit;
+
+  font-size: 13px;
+  font-weight: 600;
+  scale: 0.98;
+
+  letter-spacing: -.01em;
+
+  cursor: pointer;
+
+  transition:
+    transform 140ms var(--ease),
+    background 220ms var(--ease),
+    border-color 220ms var(--ease),
+    box-shadow 220ms var(--ease);
+
+}
+
+button:hover {
+
+  transform:
+    translateY(-1px);
+
+}
+
+button:active {
+  transform: scale(1);
+}
+
+button:focus-visible {
+  outline: none;
+  box-shadow:
+    0 0 0 3px rgba(0, 0, 0, .06);
+}
+
+.download-latest-btn,
+#download-latest-btn {
+
+  background:
+    rgba(15, 15, 15, .92);
+
+  color: white;
+
+  border:
+    1px solid rgba(255, 255, 255, .14);
+
+  backdrop-filter:
+    blur(20px);
+
+  box-shadow:
+    0 10px 24px rgba(0, 0, 0, .12);
+
+}
+
+.download-latest-btn:hover,
+#download-latest-btn:hover {
+
+  background:
+    rgba(35, 35, 35, .96);
+
+}
+
+#toggle-history-btn {
+
+  background:
+    rgba(255, 255, 255, .62);
+
+  color:
+    var(--text);
+
+  border:
+    1px solid rgba(0, 0, 0, .06);
+
+  backdrop-filter:
+    blur(18px);
+
+  box-shadow:
+    0 4px 20px rgba(0, 0, 0, .04);
+
+}
+
+#toggle-history-btn:hover {
+
+  background:
+    rgba(255, 255, 255, .82);
+
+}
+
+.history-container {
+
+  display: none;
+
+  flex-direction: column;
+
+  gap: 10px;
+
+  margin-top: 6px;
+
+  width: 100%;
+
+  padding: 10px;
+
+  max-height: 220px;
+
+  overflow-y: auto;
+  overflow-x: hidden;
+
+  background:
+    rgba(255, 255, 255, .52);
+
+  border:
+    1px solid rgba(255, 255, 255, .65);
+
+  border-radius:
+    28px;
+
+  backdrop-filter:
+    blur(26px);
+
+  box-shadow:
+    0 10px 30px rgba(0, 0, 0, .06);
+
+}
+
+.history-container.active {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+  color: var(--text);
+  cursor: pointer;
+}
+
+.history-container::-webkit-scrollbar {
+
+  width: 6px;
+
+}
+
+.history-container::-webkit-scrollbar-track {
+
+  background:
+    transparent;
+
+}
+
+.history-container::-webkit-scrollbar-thumb {
+
+  background:
+    linear-gradient(180deg,
+      rgba(139, 125, 255, .45),
+      rgba(139, 125, 255, .22));
+
+  border-radius: 999px;
+
+  border:
+    1px solid rgba(255, 255, 255, .04);
+
+}
+
+.history-container::-webkit-scrollbar-thumb:hover {
+
+  background:
+    linear-gradient(180deg,
+      rgba(139, 125, 255, .65),
+      rgba(139, 125, 255, .34));
+
+}
+
+.history-container::-webkit-scrollbar {
+  width: 5px;
+}
+
+.history-container::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+.history-container::-webkit-scrollbar-thumb {
+  background: rgba(0, 0, 0, .14);
+  border-radius: 999px;
+}
+
+.meeting-card {
+
+  position: relative;
+
+  overflow: hidden;
+
+  padding: 14px;
+
+  border-radius: 22px;
+
+  cursor: pointer;
+
+  border:
+    1px solid rgba(255, 255, 255, .7);
+
+  background:
+    linear-gradient(180deg,
+      rgba(255, 255, 255, .72),
+      rgba(255, 255, 255, .48));
+
+  backdrop-filter:
+    blur(24px);
+
+  box-shadow:
+    0 6px 18px rgba(0, 0, 0, .05);
+
+  transition:
+    transform 220ms var(--ease),
+    background-color 220ms var(--ease),
+    border-color 220ms var(--ease);
+
+}
+
+.meeting-card::before {
+
+  content: "";
+
+  position: absolute;
+
+  inset: 0;
+
+  background:
+    linear-gradient(135deg,
+      rgba(255, 255, 255, .18),
+      transparent 42%);
+
+  opacity: .45;
+
+  pointer-events: none;
+
+}
+
+.meeting-card:hover {
+
+  transform:
+    translateY(-2px);
+
+  border-color:
+    rgba(0, 0, 0, .08);
+
+  background:
+    rgba(255, 255, 255, .88);
+
+}
+
+.meeting-id {
+
+  font-size: 13px;
+
+  font-weight: 600;
+
+  color: #111;
+
+  letter-spacing: -.02em;
+
+}
+
+.participants-count,
+.messages-count {
+
+  color: #6f6f76;
+
+  font-size: 12px;
+
+}
+
+.participants-count,
+.messages-count {
+
+  color: var(--text-soft);
+
+  font-size: 12px;
+
+}
+
+hr {
+  display: none;
+}
+
+.history-meta {
+
+  display: none;
+
+  margin-top: 8px;
+  margin-bottom: 10px;
+
+  padding: 10px 12px;
+
+  border-radius: 16px;
+
+  background:
+    rgba(255, 255, 255, .035);
+
+  border:
+    1px solid rgba(255, 255, 255, .06);
+
+  backdrop-filter:
+    blur(14px);
+
+}
+
+.voiceKeep-recorded-length-discription {
+
+  display: block;
+
+  margin-bottom: 6px;
+
+  font-size: 11px;
+  font-weight: 600;
+
+  letter-spacing: -.01em;
+
+  color: var(--text);
+
+}
+
+.voiceKeep-recorded-limit-discription {
+
+  display: block;
+
+  font-size: 10px;
+
+  line-height: 1.55;
+
+  color: var(--text-soft);
+
+  opacity: .9;
+
+}
+
+.voiceKeep-limit-alert {
+
+  display: block;
+
+  margin-top: 6px;
+
+  color:
+    rgb(199, 48, 48);
+
+  font-weight: 500;
+
+  letter-spacing: -.01em;
+
+}
+
+.meetings-length {
+  display: inline-block;
+
+  margin-top: 10px;
+  padding: 6px 10px;
+
+  border-radius: 999px;
+
+  background: var(--surface-hover);
+
+  border: 1px solid var(--border);
+
+  font-size: 11px;
+  font-weight: 500;
+
+  color: var(--text-soft);
+}
+
+.meeting-card,
+.history-container,
+#toggle-history-btn {
+
+  -webkit-backdrop-filter:
+    blur(14px);
+
+  backdrop-filter:
+    blur(14px);
+
+}
+
+.meeting-id,
+.description,
+.participants-count,
+.messages-count {
+
+  position: relative;
+
+  z-index: 2;
+
+}
+
+.download-btn {
+
+  margin-top: 10px;
+
+  width: 100%;
+
+  padding: 9px 12px;
+
+  height: auto;
+
+  background:
+    rgba(20, 20, 20, .92);
+
+  color: white;
+
+  border:
+    1px solid rgba(255, 255, 255, .14);
+
+  box-shadow:
+    0 8px 18px rgba(0, 0, 0, .12);
+
+}

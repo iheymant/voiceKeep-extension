@@ -1,0 +1,33 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>VoiceKeep [Beta]</title>
+    <link rel="stylesheet" href="popup.css" />
+  </head>
+
+  <body>
+    <header>
+      <h1>VoiceKeep [Beta]</h1>
+    </header>
+    <main>
+      <p class="description">
+        Track your online meetings with VoiceKeep and save the transcripts
+        locally
+      </p>
+
+      <button id="download-latest-btn">Download Latest Transcript</button>
+
+      <button id="toggle-history-btn">Show Transcript History</button>
+
+      <section id="history-section">
+        <div class="history-meta"></div>
+        <div class="history-extra-info"></div>
+        <div class="history-container" hidden></div>
+      </section>
+    </main>
+
+    <script src="popup.js"></script>
+  </body>
+</html>

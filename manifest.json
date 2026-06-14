@@ -1,0 +1,28 @@
+{
+  "name": "VoiceKeep [Beta] - keep track of your voice",
+  "description": "Capture and save live meeting captions from Online Meetings with speaker tracking and conversational flow.",
+  "version": "0.1.0",
+  "manifest_version": 3,
+  "action": {
+    "default_popup": "popup/popup.html",
+    "default_icon": {
+      "16": "assets/icons/icon16.png",
+      "32": "assets/icons/icon32.png",
+      "48": "assets/icons/icon48.png",
+      "128": "assets/icons/icon128.png"
+    }
+  },
+  "content_scripts": [
+    {
+      "js": [
+        "scripts/content.js"
+      ],
+      "matches": [
+        "https://meet.google.com/*"
+      ]
+    }
+  ],
+  "permissions": [
+    "storage"
+  ]
+}
