@@ -7,3 +7,6 @@
 
  - (14-06-2026)
   - voiceKeep live on Chrome Web Store
+
+# 0.1.1 (23-06-2026)
+ - fixed transcripted meetings not showing properly for downloading.

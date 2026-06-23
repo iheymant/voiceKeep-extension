@@ -382,7 +382,7 @@ button:focus-visible {
 
   position: relative;
 
-  overflow: hidden;
+  overflow: visible;
 
   padding: 14px;
 
