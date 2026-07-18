@@ -10,3 +10,6 @@
 
 # 0.1.1 (23-06-2026)
  - fixed transcripted meetings not showing properly for downloading.
+ / (18-07-2026)
+ - Improved history rendering
+ - Minor UI improvements

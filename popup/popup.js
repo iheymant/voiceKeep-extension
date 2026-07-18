@@ -425,7 +425,7 @@ async function handleToggleHistory() {
   const meetings = await getMeetings();
 
   if (meetings.length === 0) {
-    showExtraInfo("No meetings found");
+    showExtraInfo("No sessions yet. Start a meeting with captions enabled and VoiceKeep will begin saving transcripts automatically.");
     historyContainer.classList.remove("active");
     renderHistoryMeta([]);
     return;
