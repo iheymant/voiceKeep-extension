@@ -1,7 +1,7 @@
 {
   "name": "VoiceKeep [Beta] - keep track of your voice",
   "description": "Capture and save live meeting captions from Online Meetings with speaker tracking and conversational flow.",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "manifest_version": 3,
   "action": {
     "default_popup": "popup/popup.html",
